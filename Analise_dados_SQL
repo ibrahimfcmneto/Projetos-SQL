@@ -3422,10 +3422,21 @@ FROM TANQUES;
 -- 9. Exiba os contatos iniciados antes de 2025.
 
 -- 10. Liste os contatos sem data de término cadastrada.
+SELECT NOME
+FROM CONTATOS
+WHERE DATA_FIM IS NULL;
 
 -- 11. Mostre as compras realizadas acima de 500.000 litros.
+SELECT CODIGO AS "COMPRAS ACIMA DE 500000"
+FROM COMPRAS
+WHERE LITROS > 500000;
 
 -- 12. Liste as compras de 'Gasolina Comum'.
+SELECT COMPRAS.CODIGO AS "COMPRAS GASOLINA COMUM"
+FROM COMPRAS
+INNER JOIN COMBUSTIVEIS
+ON COMPRAS.COMBUSTIVEL = COMBUSTIVEIS.CODIGO
+WHERE COMBUSTIVEIS.NOME = 'Gasolina Comum';
 
 -- 13. Exiba as compras do fornecedor 'Usina Santa Rita Combustíveis LTDA'.
 
