@@ -3411,15 +3411,29 @@ SELECT NOME, CAPACIDADE
 FROM TANQUES;
 
 -- 5. Mostre todas as modalidades de pagamento disponíveis.
-
+SELECT DESCRICAO
+FROM MODALIDADE_PGTO;
 
 -- 6. Exiba o nome e telefone celular de todos os contatos.
+SELECT NOME, TELEFONE_CELULAR
+FROM CONTATOS;
 
 -- 7. Liste os fornecedores que possuem o termo 'Usina' no nome.
+SELECT NOME
+FROM CONTATOS
+INNER JOIN FORNECEDORES
+ON FORNECEDORES.CODIGO = CONTATOS.FORNECEDOR
+WHERE UPPER(CONTATOs.NOME) LIKE '%USINA%';
 
 -- 8. Mostre os tanques com volume disponível menor que 1.000.000 litros.
+SELECT NOME
+FROM TANQUES
+WHERE TANQUES.CAPACIDADE < 1000000;
 
 -- 9. Exiba os contatos iniciados antes de 2025.
+SELECT NOME AS "CONTATOS INICIADOS ANTES DE 2025", DATA_INICIO AS "DATA CONTATO"
+FROM CONTATOS
+WHERE CONTATOS.DATA_INICIO < DATE '2025-01-01';
 
 -- 10. Liste os contatos sem data de término cadastrada.
 SELECT NOME
