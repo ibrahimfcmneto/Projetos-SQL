@@ -3480,6 +3480,9 @@ FROM ENTREGAS E
 WHERE E.STATUS = 1;
 
 -- 17. Exiba as entregas com status 'atrasado'.
+SELECT CODIGO AS CODIGO_ENTREGA
+FROM ENTREGAS E
+WHERE E.STATUS = 2;
 
 -- 18. Mostre os pagamentos com data de vencimento no mês atual.
 
