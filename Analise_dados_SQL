@@ -3453,11 +3453,14 @@ ON COMPRAS.COMBUSTIVEL = COMBUSTIVEIS.CODIGO
 WHERE COMBUSTIVEIS.NOME = 'Gasolina Comum';
 
 -- 13. Exiba as compras do fornecedor 'Usina Santa Rita Combustíveis LTDA'.
-SELECT NOME AS NOME_FORNECEDOR
-FROM FORNECEDORES
-INNER JOIN COMPRAS
+SELECT 
+C.LITROS,
+C.VALOR_TOTAL_LIQUIDO,
+C.DATA_COMPRA
+FROM FORNECEDORES F
+INNER JOIN COMPRAS C
 ON COMPRAS.FORNECEDOR = FORNECEDORES.CODIGO
-WHERE FORNECEDORES.NOME = 'Usina Santa Rita Combustíveis LTDA';
+WHERE F.RAZAO_SOCIAL = 'Usina Santa Rita Combustíveis LTDA';
 
 -- 14. Liste as compras ordenadas por valor total líquido (do maior para o menor).
 
