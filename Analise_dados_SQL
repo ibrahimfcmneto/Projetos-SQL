@@ -3463,6 +3463,11 @@ ON COMPRAS.FORNECEDOR = FORNECEDORES.CODIGO
 WHERE F.RAZAO_SOCIAL = 'Usina Santa Rita Combustíveis LTDA';
 
 -- 14. Liste as compras ordenadas por valor total líquido (do maior para o menor).
+SELECT CODIGO AS CODIGO_COMPRA,
+VALOR_TOTAL_BRUTO
+FROM COMPRAS
+ORDER BY 
+VALOR_TOTAL_LIQUIDO DESC;
 
 -- 15. Mostre as compras feitas em 2025.
 
