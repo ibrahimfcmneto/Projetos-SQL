@@ -3470,8 +3470,14 @@ ORDER BY
 VALOR_TOTAL_LIQUIDO DESC;
 
 -- 15. Mostre as compras feitas em 2025.
+SELECT CODIGO AS CODIGO_COMPRA
+FROM COMPRAS C
+WHERE EXTRACT(YEAR FROM C.DATA_COMPRA) = 2025;
 
 -- 16. Liste as entregas com status 'aguardando'.
+SELECT CODIGO AS CODIGO_ENTREGA
+FROM ENTREGAS E
+WHERE E.STATUS = 1;
 
 -- 17. Exiba as entregas com status 'atrasado'.
 
