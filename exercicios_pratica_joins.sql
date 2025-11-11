@@ -241,9 +241,18 @@ COMMIT;
 
 -- 1. 🇬🇧 EN: List student names and the courses they are enrolled in.
 --    🇧🇷 PT: Liste os nomes dos estudantes e os cursos em que estão matriculados.
+SELECT FULL_NAME AS "STUDENT NAME", COURSE_NAME AS "COURSE NAME"
+FROM STUDENTS S
+JOIN ENROLLMENTS E ON E.ID_STUDENT = S.ID_STUDENT
+JOIN COURSES C ON E.ID_COURSE = C.ID_COURSE;
 
 -- 2. 🇬🇧 EN: List all students, even those not enrolled in any course. Use some type of JOIN.
 --    🇧🇷 PT: Liste todos os estudantes, mesmo aqueles que não estão matriculados em nenhum curso usando algum tipo de JOIN.
+SELECT ID_STUDENT AS "ID STUDENT", FULL_NAME AS "STUDENT NAME"
+FROM STUDENTS S
+LEFT JOIN ENROLLMENTS E ON S.ID_STUDENT = E.ID_STUDENT
+LEFT JOIN COURSES C ON  C.ID_COURSE = E.ID_COURSE
+ORDER BY S.FULL_NAME;
 
 -- 3. 🇬🇧 EN: List all courses and their enrolled students, even if a course has no students. Use some type of JOIN.
 --    🇧🇷 PT: Liste todos os cursos e seus estudantes matriculados, mesmo que um curso não tenha estudantes. Use algum tipo de JOIN
