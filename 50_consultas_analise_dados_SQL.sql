@@ -3546,6 +3546,11 @@ FROM COMPRAS C
 JOIN MODALIDADE_PGTO M ON M.CODIGO = C.MODALIDADE_PGTO;
 
 -- 27. Mostre o total de litros entregues por fornecedor.
+SELECT F.RAZAO_SOCIAL AS "FORNECEDOR",
+C.LITROS AS "TOTAL DE LITROS"
+FROM FORNECEDORES F
+JOIN COMPRAS C ON F.CODIGO = C.FORNECEDOR
+GROUP BY RAZAO_SOCIAL;
 
 -- 28. Exiba o total de litros abastecidos por tipo de combustível.
 
