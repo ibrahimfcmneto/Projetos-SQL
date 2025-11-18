@@ -3554,6 +3554,7 @@ GROUP BY RAZAO_SOCIAL;
 
 -- 28. Exiba o total de litros abastecidos por tipo de combustível.
 
+
 -- 29. Liste todas as entregas com o tanque que recebeu o combustível.
 
 -- 30. Mostre o total pago (somando as parcelas) por fornecedor.
